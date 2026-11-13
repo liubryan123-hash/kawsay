@@ -1,0 +1,216 @@
+[
+  {
+    "id": "C01",
+    "set": "external",
+    "title": "Abstract test case C01",
+    "input": {
+      "demo": {
+        "sign_a": false,
+        "sign_b": false,
+        "sign_c": false,
+        "score": 8,
+        "reading": 1,
+        "sensor_ok": true
+      }
+    },
+    "reference": {
+      "category": "emergent"
+    }
+  },
+  {
+    "id": "C02",
+    "set": "external",
+    "title": "Abstract test case C02",
+    "input": {
+      "demo": {
+        "sign_a": true,
+        "sign_b": false,
+        "sign_c": false,
+        "reading": 1,
+        "sensor_ok": true
+      }
+    },
+    "reference": {
+      "category": "emergent"
+    }
+  },
+  {
+    "id": "C03",
+    "set": "external",
+    "title": "Abstract test case C03",
+    "input": {
+      "demo": {
+        "sign_a": false,
+        "sign_b": false,
+        "sign_c": false,
+        "score": 5,
+        "reading": 1,
+        "sensor_ok": true
+      }
+    },
+    "reference": {
+      "category": "emergent"
+    }
+  },
+  {
+    "id": "C04",
+    "set": "external",
+    "title": "Abstract test case C04",
+    "input": {
+      "demo": {
+        "sign_a": false,
+        "sign_b": false,
+        "sign_c": false,
+        "score": 6,
+        "reading": 1,
+        "sensor_ok": true
+      }
+    },
+    "reference": {
+      "category": "non-emergent"
+    }
+  },
+  {
+    "id": "C05",
+    "set": "external",
+    "title": "Abstract test case C05",
+    "input": {
+      "demo": {
+        "sign_a": false,
+        "sign_b": true,
+        "sign_c": false,
+        "score": 1,
+        "reading": 4,
+        "sensor_ok": true
+      }
+    },
+    "reference": {
+      "category": "non-emergent"
+    }
+  },
+  {
+    "id": "C06",
+    "set": "external",
+    "title": "Abstract test case C06",
+    "input": {
+      "demo": {
+        "sign_a": false,
+        "sign_b": false,
+        "sign_c": true,
+        "score": 0,
+        "reading": 1,
+        "sensor_ok": true
+      }
+    },
+    "reference": {
+      "category": "self-care"
+    }
+  },
+  {
+    "id": "C07",
+    "set": "external",
+    "title": "Abstract test case C07",
+    "input": {
+      "demo": {
+        "sign_a": false,
+        "sign_b": false,
+        "sign_c": true,
+        "reading": 1,
+        "sensor_ok": true
+      }
+    },
+    "reference": {
+      "category": "self-care"
+    }
+  },
+  {
+    "id": "C08",
+    "set": "space",
+    "title": "Abstract test case C08",
+    "input": {
+      "demo": {
+        "sign_a": false,
+        "sign_b": false,
+        "sign_c": true,
+        "score": 0,
+        "reading": 1,
+        "sensor_ok": true
+      }
+    },
+    "reference": {
+      "level": "follow-up"
+    }
+  },
+  {
+    "id": "C09",
+    "set": "space",
+    "title": "Abstract test case C09",
+    "input": {
+      "demo": {
+        "sign_a": false,
+        "sign_b": false,
+        "sign_c": false,
+        "score": 0,
+        "reading": 1,
+        "sensor_ok": false
+      }
+    },
+    "reference": {
+      "level": "insufficient"
+    }
+  },
+  {
+    "id": "C10",
+    "set": "space",
+    "title": "Abstract test case C10",
+    "input": {
+      "demo": {
+        "sign_a": false,
+        "sign_b": false,
+        "sign_c": false,
+        "score": 7,
+        "reading": 1,
+        "sensor_ok": true
+      }
+    },
+    "reference": {
+      "level": "priority"
+    }
+  },
+  {
+    "id": "C11",
+    "set": "space",
+    "title": "Abstract test case C11",
+    "input": {
+      "demo": {
+        "sign_a": false,
+        "sign_b": false,
+        "sign_c": false,
+        "score": 0,
+        "reading": 1,
+        "sensor_ok": true
+      }
+    },
+    "reference": {
+      "level": "scheduled"
+    }
+  },
+  {
+    "id": "C12",
+    "set": "space",
+    "title": "Abstract test case C12",
+    "input": {
+      "demo": {
+        "sign_a": true,
+        "sign_b": false,
+        "sign_c": false,
+        "score": 0,
+        "reading": 1,
+        "sensor_ok": true
+      }
+    },
+    "reference": {
+      "level": "emergency"
+    }
+  }
+]

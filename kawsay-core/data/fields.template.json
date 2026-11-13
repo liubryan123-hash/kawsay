@@ -1,0 +1,149 @@
+[
+  {
+    "path": "symptoms.chest_pain",
+    "label": "Chest pain",
+    "type": "boolean",
+    "group": "Symptoms",
+    "default": false
+  },
+  {
+    "path": "symptoms.dyspnea",
+    "label": "Shortness of breath",
+    "type": "boolean",
+    "group": "Symptoms",
+    "default": false
+  },
+  {
+    "path": "symptoms.neuro_deficit",
+    "label": "New neurological deficit",
+    "type": "boolean",
+    "group": "Symptoms",
+    "default": false
+  },
+  {
+    "path": "symptoms.headache",
+    "label": "Headache",
+    "type": "boolean",
+    "group": "Symptoms",
+    "default": false
+  },
+  {
+    "path": "symptoms.headache_red_flags",
+    "label": "Headache with red-flag signs",
+    "type": "boolean",
+    "group": "Symptoms",
+    "default": false,
+    "_pending": "Clinicians define which signs count as red flags"
+  },
+  {
+    "path": "symptoms.severe_abdominal_pain",
+    "label": "Severe abdominal pain",
+    "type": "boolean",
+    "group": "Symptoms",
+    "default": false,
+    "_pending": "Clinicians define 'severe'"
+  },
+  {
+    "path": "symptoms.syncope",
+    "label": "Fainting (syncope)",
+    "type": "boolean",
+    "group": "Symptoms",
+    "default": false
+  },
+  {
+    "path": "symptoms.fever",
+    "label": "Fever",
+    "type": "boolean",
+    "group": "Symptoms",
+    "default": false,
+    "_pending": "Clinicians decide: reported symptom or measured temperature"
+  },
+  {
+    "path": "symptoms.visual_symptoms",
+    "label": "Visual symptoms",
+    "type": "boolean",
+    "group": "Symptoms",
+    "default": false
+  },
+  {
+    "path": "symptoms.rash",
+    "label": "Skin rash",
+    "type": "boolean",
+    "group": "Symptoms",
+    "default": false
+  },
+  {
+    "path": "symptoms.nasal_congestion",
+    "label": "Nasal congestion",
+    "type": "boolean",
+    "group": "Symptoms",
+    "default": false
+  },
+  {
+    "path": "news2.total",
+    "label": "NEWS2 total score",
+    "type": "number",
+    "group": "Vital signs (NEWS2)",
+    "min": 0,
+    "max": 20,
+    "step": 1
+  },
+  {
+    "path": "news2.max_param_score",
+    "label": "Highest single NEWS2 parameter score",
+    "type": "number",
+    "group": "Vital signs (NEWS2)",
+    "min": 0,
+    "max": 3,
+    "step": 1
+  },
+  {
+    "path": "news2.rise_vs_baseline",
+    "label": "NEWS2 rise against personal baseline",
+    "type": "number",
+    "group": "Vital signs (NEWS2)",
+    "_pending": "Definition and unit of 'rise' not in the plan (Brian + clinicians)"
+  },
+  {
+    "path": "vitals.spo2_low_perfusion",
+    "label": "SpO2 reading taken with low perfusion",
+    "type": "boolean",
+    "group": "Vital signs (NEWS2)",
+    "_pending": "Criterion for 'low perfusion' (Gudelunas 2024) to be set by Milagros"
+  },
+  {
+    "path": "readiness.sleep_hours",
+    "label": "Sleep last night",
+    "type": "number",
+    "group": "Readiness",
+    "unit": "h",
+    "min": 0,
+    "max": 24,
+    "step": 0.5
+  },
+  {
+    "path": "readiness.kss",
+    "label": "Karolinska Sleepiness Scale",
+    "type": "number",
+    "group": "Readiness",
+    "min": 1,
+    "max": 9,
+    "step": 1
+  },
+  {
+    "path": "readiness.pvt_lapses_vs_baseline",
+    "label": "PVT-B lapses against personal baseline",
+    "type": "number",
+    "group": "Readiness",
+    "_pending": "Definition of 'above baseline' not in the plan"
+  },
+  {
+    "path": "env.co2_1h_avg_mmhg",
+    "label": "Cabin CO2, 1-hour average",
+    "type": "number",
+    "group": "Environment",
+    "unit": "mmHg",
+    "min": 0,
+    "step": 0.1
+  }
+]

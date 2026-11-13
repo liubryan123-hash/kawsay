@@ -1,0 +1,14 @@
+node_modules/
+evaluation-results.json
+*.zip
+
+# Internal team coordination (not part of the project)
+coordinacion/
+_version_anterior/
+Claude outputs/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*

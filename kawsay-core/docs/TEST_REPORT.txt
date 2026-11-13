@@ -1,0 +1,62 @@
+KAWSAY core - automated test report
+Command: npm test -- --reporter=verbose
+Run: 2026-11-12 18:52 (Lima time)
+Tests use abstract, non-clinical fixtures. They check the software, not the clinical content.
+
+ ✓ tests/engine.test.ts > getField > reads nested paths and returns undefined for absent steps
+ ✓ tests/engine.test.ts > evalCondition (three-valued logic) > all: false wins over unknown; unknown wins over true
+ ✓ tests/engine.test.ts > evalCondition (three-valued logic) > any: true wins over unknown; unknown wins over false
+ ✓ tests/engine.test.ts > evalCondition (three-valued logic) > not: flips known values and keeps unknown
+ ✓ tests/engine.test.ts > evalCondition (three-valued logic) > operators
+ ✓ tests/engine.test.ts > evalCondition (three-valued logic) > treats null, NaN and non-numeric values in numeric comparisons as missing
+ ✓ tests/engine.test.ts > evaluate > orders rules by severity, then order, then id, regardless of file order
+ ✓ tests/engine.test.ts > evaluate > first matching rule wins: the most severe one
+ ✓ tests/engine.test.ts > evaluate > returns each level with its rule, action and source
+ ✓ tests/engine.test.ts > evaluate > abstains when a more severe rule cannot be evaluated
+ ✓ tests/engine.test.ts > evaluate > does not abstain when the unknown rule is at the same level as the match
+ ✓ tests/engine.test.ts > evaluate > a rule marked onMissing: skip never blocks a result
+ ✓ tests/engine.test.ts > evaluate > abstains when no rule matches, and says why
+ ✓ tests/engine.test.ts > evaluate > with no match, the level is the same whether or not data were missing; only the reason differs
+ ✓ tests/engine.test.ts > evaluate > records a trace of every rule evaluated up to the decision
+ ✓ tests/engine.test.ts > evaluate > is deterministic and does not mutate its inputs
+ ✓ tests/engine.test.ts > evaluate > throws if the rule set has no abstention rule
+ ✓ tests/metrics.test.ts > levelToCategory (mapping fixed in the Execution Plan) > maps the five levels
+ ✓ tests/metrics.test.ts > cohenKappa > matches the textbook 2x2 example (20, 5, 10, 15 -> po 0.70, pe 0.50, kappa 0.40)
+ ✓ tests/metrics.test.ts > cohenKappa > is 1 for perfect agreement and 0 for chance-level agreement
+ ✓ tests/metrics.test.ts > cohenKappa > is null when undefined
+ ✓ tests/metrics.test.ts > wilson > matches a hand calculation for 8/10
+ ✓ tests/metrics.test.ts > wilson > handles the edges
+ ✓ tests/metrics.test.ts > computeMetrics > counts emergencies through the fixed mapping (level 'emergency' = category 'emergent')
+ ✓ tests/metrics.test.ts > computeMetrics > kappaAnswered uses only cases where neither side abstains
+ ✓ tests/metrics.test.ts > computeMetrics > returns nulls, not zeros, when a denominator is empty
+ ✓ tests/metrics.test.ts > runEvaluation on the fixture cases > produces the expected app output for each case
+ ✓ tests/metrics.test.ts > runEvaluation on the fixture cases > computes the overall metrics
+ ✓ tests/metrics.test.ts > runEvaluation on the fixture cases > computes the metrics per case set and the exact-level agreement
+ ✓ tests/validate.test.ts > validateRules > accepts the fixture rule set in strict mode
+ ✓ tests/validate.test.ts > validateRules > rejects structural problems
+ ✓ tests/validate.test.ts > validateRules > requires exactly one abstention rule
+ ✓ tests/validate.test.ts > validateRules > blocks pending clinical content and incomplete cross-review in strict mode only
+ ✓ tests/validate.test.ts > validateRules > flags onMissing: skip for clinical confirmation, more strongly on an emergency rule
+ ✓ tests/validate.test.ts > validateRules > always rejects a rule with no source
+ ✓ tests/validate.test.ts > validateCases > flattens nested inputs
+ ✓ tests/validate.test.ts > validateCases > accepts the fixture cases and warns about fields a case leaves out
+ ✓ tests/validate.test.ts > validateCases > rejects inputs the app cannot ask for, wrong types and inconsistent references
+ ✓ tests/workbook.test.ts > readWorkbook > reads the fixture workbook back into exactly the fixture JSON
+ ✓ tests/workbook.test.ts > readWorkbook > gives the same evaluation result as the JSON files
+ ✓ tests/workbook.test.ts > readWorkbook > reads the clinicians' template: 20 rules, example rows ignored, pending content blocked
+ ✓ tests/latency.test.ts > latencyState > uses the three scenarios fixed in the plan
+ ✓ tests/latency.test.ts > latencyState > moves through outbound, inbound and reply-possible at 0, L/2 and L
+ ✓ tests/latency.test.ts > latencyState > reports the three milestones and whether each was reached
+ ✓ tests/latency.test.ts > latencyState > never goes negative if the clock is read before the start
+ ✓ tests/latency.test.ts > formatClock > formats mm:ss and rounds up
+ ✓ tests/ui.test.tsx > buildInput > builds the nested input and leaves out blank or not-assessed fields
+ ✓ tests/ui.test.tsx > buildInput > rejects values outside the entry range instead of using them
+ ✓ tests/ui.test.tsx > EventTriage (screen 4) > shows the level, the immediate action first, then rule and source
+ ✓ tests/ui.test.tsx > EventTriage (screen 4) > answers INSUFFICIENT DATA and lists what is missing, by label
+ ✓ tests/ui.test.tsx > EventTriage (screen 4) > lets the user mark a sign as not assessed
+ ✓ tests/ui.test.tsx > EventTriage (screen 4) > blocks the assessment when a value is not usable
+ ✓ tests/ui.test.tsx > EventTriage (screen 4) > runs the latency clock for the selected round trip
+ ✓ tests/ui.test.tsx > Evaluation (screen 6) > lists every case with reference, app answer and result, plus the metrics
+ ✓ tests/ui.test.tsx > Evaluation (screen 6) > filters by set and by discrepancies, and shows benchmarks only for external cases
+ Test Files  6 passed (6)
+      Tests  55 passed (55)

@@ -1,0 +1,7 @@
+{
+  "source": "Semigran et al., BMJ 2015;351:h3480",
+  "triageAccuracy": 0.57,
+  "emergencySensitivity": 0.8,
+  "_note": "The paper's abstract reports appropriate triage advice in 57% (95% CI 52% to 61%) of evaluations and 80% (75% to 86%) for emergent cases. The Execution Plan says 58%; Milagros must confirm against the paper before this file is shown in the app.",
+  "verifiedBy": null
+}

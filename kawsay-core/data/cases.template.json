@@ -1,0 +1,36 @@
+[
+  {
+    "id": "EXT-01",
+    "set": "external",
+    "title": "PENDING: short title",
+    "input": {
+      "symptoms": {},
+      "news2": {}
+    },
+    "reference": {
+      "category": "emergent"
+    },
+    "provenance": {
+      "source": "Semigran et al. 2015, BMJ, vignette number PENDING",
+      "adaptedBy": "Milagros Villegas",
+      "dated": "YYYY-MM-DD"
+    }
+  },
+  {
+    "id": "SPC-01",
+    "set": "space",
+    "title": "PENDING: short title",
+    "input": {
+      "symptoms": {},
+      "news2": {}
+    },
+    "reference": {
+      "level": "follow-up"
+    },
+    "provenance": {
+      "author": "Claudia Pinto",
+      "dated": "YYYY-MM-DD",
+      "externalReviewer": "PENDING"
+    }
+  }
+]

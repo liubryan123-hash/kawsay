@@ -1,0 +1,202 @@
+[
+  {
+    "id": "T-FU-01",
+    "group": "test",
+    "level": "follow-up",
+    "order": 10,
+    "condition": {
+      "field": "demo.sign_c",
+      "op": "eq",
+      "value": true
+    },
+    "action": "TEST ACTION for T-FU-01: demo follow-up step",
+    "alertText": "TEST ALERT T-FU-01",
+    "source": {
+      "ref": "TEST FIXTURE (no clinical source)",
+      "section": "n/a"
+    },
+    "review": {
+      "by": [
+        "Test Reviewer 1",
+        "Test Reviewer 2"
+      ],
+      "date": "2026-11-12"
+    }
+  },
+  {
+    "id": "T-DATA-01",
+    "group": "test",
+    "level": "insufficient",
+    "order": 99,
+    "action": "TEST ACTION for T-DATA-01: complete the missing demo inputs and assess again",
+    "alertText": "TEST ALERT T-DATA-01",
+    "source": {
+      "ref": "TEST FIXTURE (no clinical source)",
+      "section": "n/a"
+    },
+    "review": {
+      "by": [
+        "Test Reviewer 1",
+        "Test Reviewer 2"
+      ],
+      "date": "2026-11-12"
+    }
+  },
+  {
+    "id": "T-EM-02",
+    "group": "test",
+    "level": "emergency",
+    "order": 20,
+    "condition": {
+      "field": "demo.sign_a",
+      "op": "eq",
+      "value": true
+    },
+    "action": "TEST ACTION for T-EM-02: demo emergency step B",
+    "alertText": "TEST ALERT T-EM-02",
+    "source": {
+      "ref": "TEST FIXTURE (no clinical source)",
+      "section": "n/a"
+    },
+    "review": {
+      "by": [
+        "Test Reviewer 1",
+        "Test Reviewer 2"
+      ],
+      "date": "2026-11-12"
+    }
+  },
+  {
+    "id": "T-SC-01",
+    "group": "test",
+    "level": "scheduled",
+    "order": 10,
+    "condition": {
+      "all": [
+        {
+          "field": "demo.sign_b",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "field": "demo.reading",
+          "op": "gt",
+          "value": 3
+        }
+      ]
+    },
+    "action": "TEST ACTION for T-SC-01: demo scheduled step",
+    "alertText": "TEST ALERT T-SC-01",
+    "source": {
+      "ref": "TEST FIXTURE (no clinical source)",
+      "section": "n/a"
+    },
+    "review": {
+      "by": [
+        "Test Reviewer 1",
+        "Test Reviewer 2"
+      ],
+      "date": "2026-11-12"
+    }
+  },
+  {
+    "id": "T-EM-01",
+    "group": "test",
+    "level": "emergency",
+    "order": 10,
+    "condition": {
+      "field": "demo.score",
+      "op": "gte",
+      "value": 7
+    },
+    "action": "TEST ACTION for T-EM-01: demo emergency step A",
+    "alertText": "TEST ALERT T-EM-01",
+    "source": {
+      "ref": "TEST FIXTURE (no clinical source)",
+      "section": "n/a"
+    },
+    "review": {
+      "by": [
+        "Test Reviewer 1",
+        "Test Reviewer 2"
+      ],
+      "date": "2026-11-12"
+    }
+  },
+  {
+    "id": "T-APT-01",
+    "group": "test",
+    "level": "scheduled",
+    "order": 20,
+    "condition": {
+      "field": "demo.optional",
+      "op": "gte",
+      "value": 2
+    },
+    "onMissing": "skip",
+    "action": "TEST ACTION for T-APT-01: demo optional step",
+    "alertText": "TEST ALERT T-APT-01",
+    "source": {
+      "ref": "TEST FIXTURE (no clinical source)",
+      "section": "n/a"
+    },
+    "review": {
+      "by": [
+        "Test Reviewer 1",
+        "Test Reviewer 2"
+      ],
+      "date": "2026-11-12"
+    }
+  },
+  {
+    "id": "T-PR-01",
+    "group": "test",
+    "level": "priority",
+    "order": 10,
+    "condition": {
+      "field": "demo.score",
+      "op": "between",
+      "value": [
+        5,
+        6
+      ]
+    },
+    "action": "TEST ACTION for T-PR-01: demo priority step",
+    "alertText": "TEST ALERT T-PR-01",
+    "source": {
+      "ref": "TEST FIXTURE (no clinical source)",
+      "section": "n/a"
+    },
+    "review": {
+      "by": [
+        "Test Reviewer 1",
+        "Test Reviewer 2"
+      ],
+      "date": "2026-11-12"
+    }
+  },
+  {
+    "id": "T-DATA-02",
+    "group": "test",
+    "level": "insufficient",
+    "order": 10,
+    "condition": {
+      "field": "demo.sensor_ok",
+      "op": "eq",
+      "value": false
+    },
+    "action": "TEST ACTION for T-DATA-02: repeat the demo measurement",
+    "alertText": "TEST ALERT T-DATA-02",
+    "source": {
+      "ref": "TEST FIXTURE (no clinical source)",
+      "section": "n/a"
+    },
+    "review": {
+      "by": [
+        "Test Reviewer 1",
+        "Test Reviewer 2"
+      ],
+      "date": "2026-11-12"
+    }
+  }
+]

@@ -1,0 +1,9 @@
+[
+  { "path": "demo.sign_a", "label": "Demo sign A", "type": "boolean", "group": "Demo signs (test only)", "default": false },
+  { "path": "demo.sign_b", "label": "Demo sign B", "type": "boolean", "group": "Demo signs (test only)", "default": false },
+  { "path": "demo.sign_c", "label": "Demo sign C", "type": "boolean", "group": "Demo signs (test only)", "default": false },
+  { "path": "demo.score", "label": "Demo score", "type": "number", "group": "Demo measurements (test only)", "min": 0, "max": 20, "step": 1 },
+  { "path": "demo.reading", "label": "Demo reading", "type": "number", "group": "Demo measurements (test only)", "unit": "units", "min": 0, "max": 100, "step": 0.1 },
+  { "path": "demo.optional", "label": "Demo optional value", "type": "number", "group": "Demo measurements (test only)", "min": 0, "max": 10, "step": 1 },
+  { "path": "demo.sensor_ok", "label": "Demo sensor reading is reliable", "type": "boolean", "group": "Demo measurements (test only)", "default": true }
+]

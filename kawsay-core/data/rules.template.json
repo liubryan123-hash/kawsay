@@ -1,0 +1,446 @@
+[
+  {
+    "id": "NEWS-01",
+    "group": "news2",
+    "level": "PENDING",
+    "order": 10,
+    "condition": {
+      "field": "news2.total",
+      "op": "gte",
+      "value": 7
+    },
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "NEWS2 (RCP 2017)",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Condition taken from the Execution Plan. Level, action and source section pending."
+  },
+  {
+    "id": "NEWS-02",
+    "group": "news2",
+    "level": "PENDING",
+    "order": 20,
+    "condition": {
+      "field": "news2.total",
+      "op": "between",
+      "value": [
+        5,
+        6
+      ]
+    },
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "NEWS2 (RCP 2017)",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Condition taken from the Execution Plan. Level, action and source section pending."
+  },
+  {
+    "id": "NEWS-03",
+    "group": "news2",
+    "level": "PENDING",
+    "order": 30,
+    "condition": {
+      "field": "news2.max_param_score",
+      "op": "eq",
+      "value": 3
+    },
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "NEWS2 (RCP 2017)",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Condition taken from the Execution Plan. Level, action and source section pending."
+  },
+  {
+    "id": "NEWS-04",
+    "group": "news2",
+    "level": "PENDING",
+    "order": 40,
+    "condition": "PENDING: threshold for 'rise against baseline' is not in the plan",
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "NEWS2 (RCP 2017)",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Blocked: needs a definition from Brian (z-score) and the clinicians."
+  },
+  {
+    "id": "RF-01",
+    "group": "red_flag",
+    "level": "PENDING",
+    "order": 10,
+    "condition": {
+      "field": "symptoms.chest_pain",
+      "op": "eq",
+      "value": true
+    },
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "PENDING: public clinical guideline chosen by the clinicians",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Condition taken from the Execution Plan. Level, action and source section pending."
+  },
+  {
+    "id": "RF-02",
+    "group": "red_flag",
+    "level": "PENDING",
+    "order": 20,
+    "condition": {
+      "field": "symptoms.dyspnea",
+      "op": "eq",
+      "value": true
+    },
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "PENDING: public clinical guideline chosen by the clinicians",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Condition taken from the Execution Plan. Level, action and source section pending."
+  },
+  {
+    "id": "RF-03",
+    "group": "red_flag",
+    "level": "PENDING",
+    "order": 30,
+    "condition": {
+      "field": "symptoms.neuro_deficit",
+      "op": "eq",
+      "value": true
+    },
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "PENDING: public clinical guideline chosen by the clinicians",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Condition taken from the Execution Plan. Level, action and source section pending."
+  },
+  {
+    "id": "RF-04",
+    "group": "red_flag",
+    "level": "PENDING",
+    "order": 40,
+    "condition": {
+      "field": "symptoms.headache_red_flags",
+      "op": "eq",
+      "value": true
+    },
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "PENDING: public clinical guideline chosen by the clinicians",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Red-flag signs to be defined by the clinicians."
+  },
+  {
+    "id": "RF-05",
+    "group": "red_flag",
+    "level": "PENDING",
+    "order": 50,
+    "condition": {
+      "field": "symptoms.severe_abdominal_pain",
+      "op": "eq",
+      "value": true
+    },
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "PENDING: public clinical guideline chosen by the clinicians",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "'Severe' to be defined by the clinicians."
+  },
+  {
+    "id": "RF-06",
+    "group": "red_flag",
+    "level": "PENDING",
+    "order": 60,
+    "condition": {
+      "field": "symptoms.syncope",
+      "op": "eq",
+      "value": true
+    },
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "PENDING: public clinical guideline chosen by the clinicians",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Condition taken from the Execution Plan. Level, action and source section pending."
+  },
+  {
+    "id": "RF-07",
+    "group": "red_flag",
+    "level": "PENDING",
+    "order": 70,
+    "condition": "PENDING: fever AND NEWS2 'elevated' - the NEWS2 threshold is not in the plan",
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "PENDING: public clinical guideline chosen by the clinicians",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Blocked: needs the NEWS2 cut-off from the clinicians."
+  },
+  {
+    "id": "RF-08",
+    "group": "red_flag",
+    "level": "PENDING",
+    "order": 80,
+    "condition": {
+      "field": "symptoms.visual_symptoms",
+      "op": "eq",
+      "value": true
+    },
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "PENDING: public clinical guideline chosen by the clinicians",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Condition taken from the Execution Plan. Level, action and source section pending."
+  },
+  {
+    "id": "ISS-01",
+    "group": "iss_frequent",
+    "level": "follow-up",
+    "order": 10,
+    "condition": {
+      "field": "symptoms.rash",
+      "op": "eq",
+      "value": true
+    },
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "NTRS 20160012380; clinical guideline",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Level from the plan (self-care and follow-up)."
+  },
+  {
+    "id": "ISS-02",
+    "group": "iss_frequent",
+    "level": "follow-up",
+    "order": 20,
+    "condition": {
+      "field": "symptoms.nasal_congestion",
+      "op": "eq",
+      "value": true
+    },
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "NTRS 20160012380; clinical guideline",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Level from the plan (self-care and follow-up)."
+  },
+  {
+    "id": "ISS-03",
+    "group": "iss_frequent",
+    "level": "follow-up",
+    "order": 30,
+    "condition": {
+      "all": [
+        {
+          "field": "symptoms.headache",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "field": "symptoms.headache_red_flags",
+          "op": "eq",
+          "value": false
+        }
+      ]
+    },
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "PMID 38478846; clinical guideline",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Level from the plan. Clinicians confirm how 'tension-type without red flags' is captured."
+  },
+  {
+    "id": "APT-01",
+    "group": "readiness",
+    "level": "PENDING",
+    "order": 10,
+    "condition": "PENDING: 'PVT-B lapses above baseline' has no threshold in the plan",
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "Basner 2011; Sleep 2022",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Blocked: needs a threshold. Clinicians also decide onMissing (abstain or skip) for readiness data in a triage event."
+  },
+  {
+    "id": "APT-02",
+    "group": "readiness",
+    "level": "PENDING",
+    "order": 20,
+    "condition": {
+      "all": [
+        {
+          "field": "readiness.sleep_hours",
+          "op": "lt",
+          "value": 6
+        },
+        {
+          "field": "readiness.kss",
+          "op": "gte",
+          "value": 7
+        }
+      ]
+    },
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "Akerstedt 1990; Sleep 2022",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Condition taken from the Execution Plan. Level, action and source section pending. Clinicians decide onMissing."
+  },
+  {
+    "id": "ENV-01",
+    "group": "environment",
+    "level": "PENDING",
+    "order": 10,
+    "condition": {
+      "field": "env.co2_1h_avg_mmhg",
+      "op": "gt",
+      "value": 3
+    },
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "NASA-STD-3001 [V2 6004]",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Condition taken from the Execution Plan. Level, action and source section pending. Clinicians decide onMissing."
+  },
+  {
+    "id": "DATA-02",
+    "group": "data",
+    "level": "PENDING",
+    "order": 10,
+    "condition": {
+      "field": "vitals.spo2_low_perfusion",
+      "op": "eq",
+      "value": true
+    },
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "Gudelunas 2024",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Clinicians decide the level and what a low-perfusion SpO2 reading does to the NEWS2 rules."
+  },
+  {
+    "id": "DATA-01",
+    "group": "data",
+    "level": "insufficient",
+    "order": 99,
+    "action": "PENDING (clinicians)",
+    "alertText": "PENDING (clinicians)",
+    "source": {
+      "ref": "Design principle (KAWSAY Execution Plan)",
+      "section": "PENDING (clinicians)"
+    },
+    "review": {
+      "by": [],
+      "date": ""
+    },
+    "_note": "Abstention rule: used when critical data are missing or no rule applies. Only the texts are pending."
+  }
+]
