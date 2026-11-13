@@ -42,3 +42,16 @@
 .kw-case-title { display: block; font-weight: 400; color: #4a5a6a; font-size: 0.78rem; }
 .kw-table-wrap { overflow-x: auto; }
 .kw-clock label { margin-right: 0.5rem; }
+
+/* Recording check-in, sharing the existing neutral design. */
+.kw-field input[type="text"], .kw-field input[type="datetime-local"] { font: inherit; padding: 0.45rem; border: 1px solid #8a99a8; border-radius: 6px; max-width: 100%; box-sizing: border-box; }
+.kw-answers { margin: 0.5rem 0; }
+.kw-answers > div { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; justify-content: space-between; border-bottom: 1px solid #e6ebf0; padding: 0.5rem 0; }
+.kw-answers dt { flex: 1 1 16rem; }
+.kw-answers dd { margin: 0; font-weight: 600; }
+.kw-history { margin-top: 2rem; }
+.kw-history details { margin-top: 0.75rem; }
+.kw-history summary { cursor: pointer; padding: 0.5rem 0; font-weight: 600; }
+.kw-notice { padding: 0.75rem; border: 1px solid #1d4f91; background: #eef5ff; }
+.kw-screen :focus-visible, .demo-tabs :focus-visible { outline: 3px solid #1d4f91; outline-offset: 3px; }
+.kw-actions { flex-wrap: wrap; }

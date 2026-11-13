@@ -26,6 +26,14 @@ medical device. All crew data in the project are synthetic and labelled as simul
 
 The core has no runtime dependencies and makes no network calls, so it works offline.
 
+## Recording check-in
+
+The preview also opens a Spanish recording-only check-in (simulated data), with
+confirmation, browser-local history and JSON export. Run `npm run demo` and
+`npm run serve-demo`, then open http://127.0.0.1:4173. See
+[LOCAL_CHECKIN.md](docs/LOCAL_CHECKIN.md) for the data contract and limitations.
+It does not invoke the triage engine or introduce clinical thresholds.
+
 ## Use
 
 ```bash

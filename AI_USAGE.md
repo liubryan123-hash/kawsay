@@ -9,6 +9,8 @@ Every use of an AI tool by any team member is recorded here, with the tool and w
 | 2026-11-12 | Claude (Anthropic), model Claude Fable 5.2 | Clinicians' Excel workbook layout (empty of clinical content) and its importer; task list taken from the Execution Plan; first draft of the submission form text | Yeremi Camacho (pending) |
 | 2026-11-12 | ChatGPT (OpenAI) | External code review of the engine and metrics fragments (one round; outcome in `kawsay-core/docs/REVIEW_LOG.md`) | Yeremi Camacho |
 
+| 2026-11-13 | ChatGPT / Codex (OpenAI) | Recording-only functional check-in, typed data catalogue, browser persistence, confirmation/history UI, tests and local demo workflow | Pending team review via pull request; no clinical rules or recommendations added |
+
 Notes for the submission form:
 
 - No clinical rule, threshold, action text or source was written by an AI tool. The

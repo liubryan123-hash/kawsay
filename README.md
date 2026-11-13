@@ -18,6 +18,14 @@ are synthetic and labelled as simulated.
 The app shell, the synthetic-data pipeline and the remaining screens are added during
 the hackathon.
 
+## Local recording check-in
+
+A recording-only check-in with simulated crew IDs, measurements and draft functional
+questions is available in the development preview. It includes explicit missing data,
+confirmation, local history and JSON export. See [local check-in instructions](kawsay-core/docs/LOCAL_CHECKIN.md).
+Clinical interpretation of these new inputs is pending; the existing triage demo still
+uses abstract fixtures.
+
 ## Current status
 
 The engine, the metrics, the case runner and screens 4 and 6 are implemented and pass

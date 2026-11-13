@@ -10,7 +10,9 @@
     "check-data": "tsx scripts/check-data.ts",
     "evaluate": "tsx scripts/evaluate.ts",
     "demo": "node scripts/build-demo.mjs",
-    "import-workbook": "tsx scripts/import-workbook.ts"
+    "import-workbook": "tsx scripts/import-workbook.ts",
+    "serve-demo": "node scripts/serve-demo.mjs",
+    "test:checkin-smoke": "node scripts/checkin-smoke.mjs"
   },
   "devDependencies": {
     "@testing-library/react": "^16.0.0",
