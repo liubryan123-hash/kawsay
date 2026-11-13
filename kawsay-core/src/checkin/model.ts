@@ -47,7 +47,7 @@ export function parseAnswers(values: Record<string, unknown>): { answers: Record
   return { answers, errors };
 }
 
-export function prepareCheckIn(draft: Draft, now = new Date(), id = crypto.randomUUID()):
+export function prepareCheckIn(draft: Draft, now = new Date(), id: string = crypto.randomUUID()):
   { record?: CheckIn; errors: string[] } {
   const { answers, errors } = parseAnswers(draft.values);
   const observed = new Date(draft.observedAt);

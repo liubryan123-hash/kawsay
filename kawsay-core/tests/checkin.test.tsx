@@ -58,7 +58,7 @@ describe("check-in local", () => {
   });
 
   it("keeps review available after a failed save and supports retry", () => {
-    const storage = { getItem: vi.fn(() => null), setItem: vi.fn<(key: string, value: string) => void>(() => { throw new Error("Quota"); }) };
+    const storage = { getItem: vi.fn(() => null), setItem: vi.fn((_key: string, _value: string): void => { throw new Error("Quota"); }) };
     render(<CheckIn storage={storage} />);
     reviewForm();
     fireEvent.click(screen.getByRole("button", { name: "Confirmar y guardar" }));
