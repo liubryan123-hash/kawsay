@@ -1,5 +1,11 @@
 # KAWSAY – Earth-independent crew health decision support
 
+> Trabajo previo al inicio oficial: elegibilidad pendiente de aclaración con los
+> organizadores. El GO Team advierte que empezar el proyecto antes del 14 de
+> noviembre a las 09:00 locales puede causar descalificación. Declarar este código
+> no garantiza que pueda usarse en el concurso. Véase [la nota de reunión](docs/REUNION_2230.md#primera-decisión-elegibilidad-del-trabajo-previo)
+> y [la aclaración oficial](https://github.com/nasa/spaceapps/discussions/1827).
+
 Team KUNTUR X (Lima, Peru) · NASA Space Apps Challenge 2026 ·
 Challenge: *Create Health Monitoring Software for Astronauts on Space Missions*
 

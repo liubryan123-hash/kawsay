@@ -6,6 +6,19 @@
 
 Cerrar un recorrido principal, asignar responsables y fijar un punto de integración. No presentar como terminados el producto completo, la validación clínica ni el servidor compartido.
 
+## Primera decisión: elegibilidad del trabajo previo
+
+La aclaración oficial del GO Team de NASA Space Apps indica que el trabajo del proyecto debe comenzar el sábado 14 de noviembre de 2026 a las 09:00, hora local del evento, y que adelantarlo puede conducir a descalificación. Antes permite elegir reto, revisar recursos, investigar y formar equipo. Esto es más restrictivo que asumir que basta declarar el código previo.
+
+Fuentes consultadas:
+
+- Paula-GO-Team, respuesta del 5 de noviembre de 2026: https://github.com/nasa/spaceapps/discussions/1827
+- Madison-GO-Team, aclaración del 13 de noviembre de 2026: https://github.com/nasa/spaceapps/discussions/2009
+
+El prototipo y los commits previos al inicio deben conservar su fecha e historial reales. No afirmar que declararlos autoriza su reutilización ni presentarlos como desarrollo realizado durante el evento. La primera tarea del equipo es consultar a los organizadores, describiendo el trabajo ya realizado, y obtener indicación expresa sobre cómo proceder. No se ha enviado esa consulta en nombre del equipo. La orientación anterior del asistente sobre que la declaración era suficiente queda corregida.
+
+Hasta aclararlo, el recorrido de abajo sirve como inventario interno del trabajo existente; no implica autorización para usarlo como entrega elegible ni para seguir implementándolo antes del inicio.
+
 ## Qué mostrar en 7 minutos
 
 Abrir `kawsay-core/demo/kawsay-simulador.html` actualizado. El archivo anterior `kawsay-screens-preview.html` es otra demo y no muestra este recorrido.
@@ -32,7 +45,7 @@ Si el caso de Ana muestra 5–6 o 7–8 en lugar de 5 y 7 exactos, explicar la c
 | Earth Packet | 24 h, CSV/JSON, unidades y acciones; cola representada sin transporte |
 | Regresión del núcleo, TypeScript y generador | CI previo aprobado, commit 328c3b0 |
 | Recorrido DOM | CI previo aprobado; se amplió para probar aislamiento de borradores por tripulante |
-| Auditoría de esta preparación | 18 pruebas locales aprobadas; nueva ejecución CI requerida al subir correcciones |
+| Auditoría de esta preparación | 18 pruebas locales aprobadas y CI completo aprobado para 3f3f11c, incluido recorrido DOM ampliado: https://github.com/liubryan123-hash/kawsay/actions/runs/43550498514 |
 | Inspección visual y prueba manual de descarga/recarga | Pendientes en el navegador del usuario |
 | PR #1 | Abierto; GitHub informa dirty/mergeable=false, aunque la base sigue siendo 6d5bc63 y la rama deriva de ella; revisar con Rodrigo/Yeremi antes de fusionar |
 

@@ -1,5 +1,13 @@
 # AI usage log
 
+Eligibility correction: the GO Team states that actual project work must not begin
+before the official 14 November 2026 09:00 local start and that advance work can lead
+to disqualification. Merely declaring pre-existing code is not permission to reuse
+this project. Preserve the actual commit history and ask the organisers how to
+proceed; the assistant's earlier implication that disclosure was sufficient was
+incorrect. Sources: https://github.com/nasa/spaceapps/discussions/1827 and
+https://github.com/nasa/spaceapps/discussions/2009.
+
 Every use of an AI tool by any team member is recorded here, with the tool and what it was used for.
 
 | Date | Tool | Used for | Human check |
