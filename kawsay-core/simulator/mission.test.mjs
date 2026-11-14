@@ -88,3 +88,13 @@ test('gráficos y pantallas se generan con datos, sin inyectar HTML desde los re
   const base=baseline(data,'A','hr');assert.ok(base.sd>0);
   assert.ok(assessmentHTML(missionRecord(data,'A',20,12)).includes('NEWS2 7'));
 });
+test('el paquete local conserva el criterio activado por un reporte manual',()=>{
+  const end='2026-11-14T01:00:00Z';
+  const record=parseEntry({crew:'A',time:'2026-11-13T19:00',sleep:'',symptom2:'present'},new Date(end),'local-chest');
+  const p=packet(data,{...initialState(),records:[record]},'A',end,'local');
+  assert.equal(p.notices.length,1);
+  assert.equal(p.notices[0].id,'D-CHEST');
+  assert.equal(p.notices[0].recordId,record.id);
+  assert.equal(p.notices[0].clinicalReview,'pending');
+  assert.equal(p.news2.max,null);
+});

@@ -24,6 +24,7 @@ function baseRegistration() {
   return `<div class="two"><section class="card"><p class="eyebrow">INGRESO MANUAL</p><h2>Cuéntanos cómo te encuentras</h2><form id="entry-form" novalidate><div class="fields"><label>Tripulante${crewSelect('form-crew')}</label><label>Fecha y hora en Perú<input name="time" type="datetime-local" value="${limaInput()}" required></label></div><h3>Mediciones disponibles</h3><p class="muted">Escribe el número. La unidad aparece junto al campo. Deja sin medir lo que no tengas.</p><div class="fields">${VITALS.map(([key,label,unit]) => `<label>${label} (${unit})<input name="${key}" inputmode="decimal" placeholder="Sin medir" autocomplete="off"></label>`).join('')}</div><h3>Sueño y actividad</h3><div class="fields"><label>¿Cuántas horas dormiste en las últimas 24 horas?<input name="sleep" inputmode="decimal" placeholder="Sin evaluar"></label>${select('rest','¿Qué tan reparador fue tu último descanso?',REST)}${select('activity','Comparado con tu nivel habitual, ¿cuánta dificultad tienes hoy para realizar tus actividades?',ACTIVITY)}</div><h3>Molestias actuales</h3><div class="fields">${SYMPTOMS.map((label,n) => `<label>${label}<select name="symptom${n}">${option('','Sin evaluar')}${option('present','Presente')}${option('absent','Ausente')}</select></label>`).join('')}</div><label>¿Qué más deseas comunicar al personal de salud?<textarea name="note" maxlength="1000" rows="3" placeholder="Describe cuándo empezó, cómo ha cambiado o qué necesitas. Solo información ficticia."></textarea></label><p class="muted">Preguntas de demostración; no son una escala clínica validada.</p><button class="primary" type="submit">Revisar antes de guardar</button></form></section><aside><section class="card"><p class="eyebrow">SENSOR SIMULADO</p><h2>Generar una toma</h2><p>Crea una medición ficticia para el tripulante seleccionado arriba. No asigna respuestas a las preguntas personales.</p><button data-action="sensor">Recibir una toma simulada</button><button data-action="stream">${timer ? 'Pausar flujo' : 'Iniciar flujo cada 5 s'}</button><p class="muted">${timer ? 'Flujo activo' : 'Flujo pausado'} · máximo 60 tomas por sesión. El flujo se pausa al cambiar de vista.</p></section><section class="card"><h3>Recorrido de la demo</h3><ol><li>Registra información o simula una toma.</li><li>Consulta el visor del tripulante.</li><li>Revisa el historial en el panel médico.</li><li>Ensaya una solicitud de apoyo.</li></ol><p class="muted">Las vistas comparten datos en este navegador. El servidor de nave y la red todavía están simulados.</p></section></aside></div>`;
 }
 let savedDraft = null;
+const draftsByCrew = new Map();
 function registration() {
   if(pending) return baseRegistration()+assessmentHTML(pending);
   const context=`<h3>Contexto para NEWS2 · escala 1</h3><p class="muted">Solo demostración con tripulantes adultos ficticios. No aplicar automáticamente a objetivos individuales de oxígeno. Si falta contexto, no se calcula el puntaje completo.</p><div class="fields"><label>¿Está alerta y sin confusión de inicio reciente?<select name="newsAlert">${option('','Sin evaluar')}${option('yes','Sí')}${option('no','No')}</select></label><label>¿Recibe oxígeno suplementario?<select name="newsOxygen">${option('','Sin evaluar')}${option('yes','Sí')}${option('no','No')}</select></label><label>Escala de saturación aplicable al caso ficticio<select name="newsScale">${option('','Sin confirmar / otra escala')}${option('1','Escala 1 confirmada para esta simulación')}</select></label></div>`;
@@ -73,7 +74,21 @@ function render() {
     for (const [name,value] of Object.entries(savedDraft)) { const el = document.getElementById('entry-form').elements.namedItem(name); if (el) el.value = value; }
   }
 }
-function captureDraft() { const f = document.getElementById('entry-form'); if(f) savedDraft = Object.fromEntries(new FormData(f)); }
+function captureDraft() {
+  const f=document.getElementById('entry-form');
+  if(f) {
+    // The crew selector may already show the next profile during a change event.
+    // Attribute the values still on screen to the previous active profile.
+    savedDraft={...Object.fromEntries(new FormData(f)),crew};
+    draftsByCrew.set(crew,savedDraft);
+  }
+}
+function switchCrew(next) {
+  if(!CREW.includes(next)) throw new Error('Tripulante desconocido.');
+  captureDraft();stopStream();crew=next;
+  savedDraft=draftsByCrew.get(crew)??null;
+  pending=null;feedback='';
+}
 function stopStream() { if(timer) clearInterval(timer); timer=null; }
 function receiveSensor() {
   if (tick >= 60) { stopStream(); throw new Error('Se completaron las 60 tomas de esta sesión.'); }
@@ -99,8 +114,7 @@ root.addEventListener('change', event => {
   if(event.target.id==='mission-hour') {missionHour=Number(event.target.value);render();return;}
   if(event.target.id==='packet-mode') {packetMode=event.target.value;render();return;}
   if(event.target.id==='visor-origin') {visorOrigin=event.target.value;render();return;}
-  if(event.target.id==='active-crew') { captureDraft(); stopStream(); crew=event.target.value; if(savedDraft) savedDraft.crew=crew; pending=null; feedback=''; render(); }
-  else if(event.target.id==='form-crew') { crew=event.target.value; document.getElementById('active-crew').value=crew; }
+  if(event.target.id==='active-crew' || event.target.id==='form-crew') { switchCrew(event.target.value); render(); }
   else if(event.target.id==='record-filter') {
     const mode=event.target.value;
     const records=state.records.filter(r=>r.crew===crew && (mode!=='manual'||r.source==='manual') && (mode!=='pending'||!state.reviews.some(v=>v.recordId===r.id))).sort((a,b)=>Date.parse(b.observedAt)-Date.parse(a.observedAt));
@@ -112,7 +126,7 @@ root.addEventListener('click', event => {
   try {
     if(b.dataset.tab) { captureDraft(); stopStream(); active=b.dataset.tab; feedback=''; render(); return; }
     switch(b.dataset.action) {
-      case 'mission-detail': crew=b.dataset.crew;active='detalle';break;
+      case 'mission-detail': switchCrew(b.dataset.crew);active='detalle';break;
       case 'mission-visor': visorOrigin='mission';active='visor';break;
       case 'packet-json': case 'packet-csv': {
         const end=packetMode==='mission'?missionAt(missionDay,missionHour):new Date().toISOString();
@@ -125,8 +139,9 @@ root.addEventListener('click', event => {
       case 'edit': pending=null; break;
       case 'confirm': {
         if(!pending) return;
+        if(pending.crew!==crew) throw new Error('El registro pertenece a otro tripulante. Revisa el perfil antes de guardar.');
         const record={...pending,receivedAt:new Date().toISOString()};
-        commit({...state,records:[...state.records,record]}); crew=record.crew;pending=null;savedDraft=null;feedback='Registro guardado. Pendiente de revisión médica.'; break;
+        commit({...state,records:[...state.records,record]}); crew=record.crew;pending=null;savedDraft=null;draftsByCrew.delete(crew);feedback='Registro guardado. Pendiente de revisión médica.'; break;
       }
       case 'sensor': captureDraft(); receiveSensor(); break;
       case 'stream': captureDraft(); if(timer) stopStream(); else { receiveSensor(); timer=setInterval(()=>{try{receiveSensor();render();}catch(error){stopStream();feedback=error.message;render();}},5000); } break;

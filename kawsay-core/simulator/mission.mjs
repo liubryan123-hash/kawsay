@@ -102,11 +102,13 @@ export function packet(data,state,crew,end,mode='mission') {
   const totals=scored.map(x=>x.assessment.news.total).filter(n=>n!==null);
   const days=[...new Set(records.map(r=>r.daily?.day).filter(d=>d!==undefined))];
   const notices=[];
+  for(const {record,assessment} of scored) {
+    const engine=assessment.engine;
+    if(engine.reason==='rule_matched') notices.push({at:record.observedAt,id:engine.ruleId,recordId:record.id,text:`Ensayo del motor: ${engine.level}`,source:engine.source.ref,clinicalReview:'pending'});
+  }
   if(mode==='mission') for(const r of records) {
     const v=data.vitals.find(x=>`mission-${x.astro}-${x.day}-${x.hour}`===r.id);
     const result=missionSignals(data,crew,v.day,v.hour);
-    const engine=result.assessment.engine;
-    if(engine.reason==='rule_matched') notices.push({at:r.observedAt,id:engine.ruleId,text:`Ensayo del motor: ${engine.level}`,source:engine.source.ref,clinicalReview:'pending'});
     notices.push(...result.signals.map(s=>({...s,at:r.observedAt,clinicalReview:'pending'})));
   }
   const related=state.alerts.filter(a=>a.crew===crew&&(within(a.createdAt)||['medicalAckAt','buddyAckAt','closedAt'].some(k=>a[k]&&within(a[k]))));

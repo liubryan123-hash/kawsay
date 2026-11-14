@@ -4,6 +4,8 @@ Sesión del 13 de noviembre de 2026, hora de Perú. Aporte de Liu Bryan Cayllahu
 
 ## Resultado
 
+Preparación de la reunión: [REUNION_2230.md](REUNION_2230.md) incluye guion, auditoría y decisiones a cerrar. Se corrigió el aislamiento de borradores al cambiar de tripulante y la inclusión de criterios manuales en Earth Packet Local; el conjunto local pasa ahora 18 pruebas y se amplió el recorrido DOM de regresión.
+
 El simulador consume los cuatro JSON del generador e integra ocho vistas: Tripulación, Evolución, Registro, Visor del casco, Panel médico, Compañero de apoyo, Earth Packet y Avance y límites. Todo se incluye en un HTML autónomo, generado con Node 24, sin dependencias npm para el build básico.
 
 ### Datos y seguimiento
