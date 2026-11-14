@@ -12,7 +12,11 @@
     "demo": "node scripts/build-demo.mjs",
     "import-workbook": "tsx scripts/import-workbook.ts",
     "serve-demo": "node scripts/serve-demo.mjs",
-    "test:checkin-smoke": "node scripts/checkin-smoke.mjs"
+    "test:checkin-smoke": "node scripts/checkin-smoke.mjs",
+    "demo:simulador": "node scripts/build-simulator.mjs",
+    "serve:simulador": "node scripts/serve-demo.mjs --simulador",
+    "test:simulador": "node scripts/build-simulator.mjs && node --test simulator/*.test.mjs",
+    "test:simulador-ui": "node scripts/build-simulator.mjs && node simulator/ui-smoke.mjs"
   },
   "devDependencies": {
     "@testing-library/react": "^16.0.0",

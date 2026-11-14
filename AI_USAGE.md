@@ -13,8 +13,25 @@ Every use of an AI tool by any team member is recorded here, with the tool and w
 
 Notes for the submission form:
 
-- No clinical rule, threshold, action text or source was written by an AI tool. The
-  clinical content comes from the team's clinicians and the cited sources.
+Integration update: ChatGPT / Codex assisted with the 30-day JSON consumer,
+mission charts, scale-1 NEWS2 arithmetic checked against RCP, an adapter reusing
+the existing engine, Earth Packet CSV/JSON, technical tests and documentation.
+Demonstration rules D-* are unreviewed and explicitly labelled as technical trials,
+not approved clinical recommendations. Clinical action protocols, mission thresholds and sign-off remain
+pending. No clinical validation results or team identities were invented.
+
+Actualización del simulador: ChatGPT / Codex ayudó a implementar las vistas locales
+en español (registro, casco, revisión médica y apoyo), el contrato simulado, las
+pruebas técnicas y el informe de avance. Las preguntas funcionales son propuestas
+de interfaz pendientes de revisión del equipo; no constituyen una escala validada.
+Los valores generados son ficticios y no activan reglas clínicas. Revisión humana pendiente.
+
+- The initial engine used abstract fixtures. Later AI-assisted code translated the
+  guide's scenarios and the cited RCP scoring table into unreviewed demonstration
+  criteria and NEWS2 arithmetic. These are not signed clinician-authored rules;
+  clinical action text and approval still require the team's clinicians.
 - No AI-generated images or video are part of this repository so far.
-- The contents of `kawsay-core/` were drafted on Thursday 12 November 2026, before the
-  hackathon start. They are pre-existing work and must be listed as such in the project's references.
+- The initial engine, metrics and screens 4/6 were drafted on Thursday 12 November
+  2026 before the hackathon start and must be declared as pre-existing work. The
+  check-in, generator and integrated simulator were added in the subsequent session
+  recorded above; do not classify those additions as the original pre-existing core.

@@ -1,0 +1,18 @@
+import { readFileSync, writeFileSync } from 'node:fs';
+import { engineSource } from '../simulator/engine-adapter.mjs';
+import { validateMission } from '../simulator/mission.mjs';
+const base = new URL('../simulator/', import.meta.url);
+const domain = readFileSync(new URL('domain.mjs', base), 'utf8').replace(/^export /gm, '');
+const stripImports = text => text.replace(/^import .* from ['"].*['"];\r?\n/gm, '');
+const app = stripImports(readFileSync(new URL('app.mjs', base), 'utf8'));
+const mission = stripImports(readFileSync(new URL('mission.mjs', base), 'utf8')).replace(/^export /gm, '');
+const missionUI = stripImports(readFileSync(new URL('mission-ui.mjs', base), 'utf8')).replace(/^export /gm, '');
+const dataRoot=new URL('../../app/public/data/',import.meta.url);
+const data=Object.fromEntries(['crew','vitals','daily','environment'].map(key=>[key,JSON.parse(readFileSync(new URL(key+'.json',dataRoot),'utf8'))]));
+validateMission(data);
+const css = readFileSync(new URL('style.css', base), 'utf8')+'\n'+readFileSync(new URL('mission.css',base),'utf8');
+const js = ('const missionData='+JSON.stringify(data).replace(/</g,'\\u003c')+';\nconst {evaluate}=(()=>{'+engineSource()+';return {evaluate};})();\n'+domain+'\n'+mission+'\n'+missionUI+'\n'+app).replace(/<\/script/gi, '<\\/script');
+const html = `<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KAWSAY · Simulador local</title><style>${css}</style></head><body><div id="app"></div><script type="module">${js}</script></body></html>`;
+const out = new URL('../demo/kawsay-simulador.html', import.meta.url);
+writeFileSync(out, html);
+console.log('Simulador autónomo generado: ' + out.pathname);
